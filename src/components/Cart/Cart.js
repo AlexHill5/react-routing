@@ -6,6 +6,8 @@ import ShoppingCart from 'react-icons/lib/fa/shopping-cart';
 
 import './Cart.css';
 
+import { Link } from 'react-router-dom'
+
 class Cart extends Component {
   constructor() {
     super();
@@ -46,11 +48,11 @@ class Cart extends Component {
           </div>
           <div id="Cart__details">
             { swagComponents }
-          </div>
-          <div id="Cart__footer" onClick={ this.toggleCartDetails }>
+          </div >
+          <Link to="/checkout" id="Cart_navLink"> <div id="Cart__footer" onClick={ this.toggleCartDetails }>
             <span> Checkout </span>
-          </div>
-        </div>
+          </div> </Link>
+        </div> 
       :
         <div id="Cart__container" onClick={ this.toggleCartDetails }>
           <span> <ShoppingCart id="Cart__icon" /> { howMuchSwag } items: </span>
